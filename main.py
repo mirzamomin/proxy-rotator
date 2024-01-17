@@ -6,6 +6,7 @@
     1. Imports 
 """
 
+import os
 import sys
 import shutup
 import asyncio
@@ -102,6 +103,12 @@ def export(proxy_pool):
             proxy_host = proxy['http'].split(':')[0]
             proxy_port = proxy['http'].split(':')[1]
             proxy_url = f'http://{proxy_host}:{proxy_port}'
+
+            # Setting the proxy environment variable using os.environ
+            os.environ['HTTP_PROXY'] = proxy_url
+            os.environ['HTTPS_PROXY'] = proxy_url
+
+            ### USE YOUR SCRAPPING LOGIC HERE ###
 
             # Exporting valid proxies to proxies.txt for record using File Handling
             file = open('proxies.txt', 'a')
