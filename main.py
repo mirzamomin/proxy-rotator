@@ -1,5 +1,5 @@
 """
-    * Entirely Developed by Momin, SE@NXB
+    * Developed by Momin Baig
 """
 
 """
